@@ -1,0 +1,14 @@
+// If you want to run as a non-root user in the container, see .devcontainer/docker-compose.yml.
+{
+	"name": "Identity(NetCore&Postrgres&Kafka)",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "web",
+	"workspaceFolder": "/workspace",
+	// Add the IDs of extensions you want installed when the container is created in the array below.
+	"extensions": [
+		"Ionide.Ionide-fsharp",
+		"ms-vscode.csharp",
+		"editorconfig.editorconfig",
+		"Ionide.Ionide-Paket"
+	]
+}
