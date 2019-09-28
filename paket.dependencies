@@ -3,3 +3,4 @@ framework: netcoreapp3.0, netstandard2.1
 storage: none
 
 nuget FSharp.Core
+nuget TaskBuilder.fs
