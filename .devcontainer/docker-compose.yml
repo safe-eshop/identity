@@ -55,3 +55,15 @@ services:
       - ./zk-single-kafka-single/kafka1/data:/var/lib/kafka/data
     depends_on:
       - zoo1
+  auth-db:
+    image: postgres:alpine
+    ports: 
+      - 5433
+    volumes:
+      - auth-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: pass
+      POSTGRES_USER: user
+      POSTGRES_DB: data
+volumes:
+  auth-data:
