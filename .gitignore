@@ -11,7 +11,7 @@
 /node_modules
 /wwwroot/node_modules
 */zk-single-kafka-single/
-
+.ionide/
 ### fsharp ###
 lib/debug
 lib/release
