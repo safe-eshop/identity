@@ -1,2 +1,3 @@
 FSharp.Core
 TaskBuilder.fs
+System.IdentityModel.Tokens.Jwt

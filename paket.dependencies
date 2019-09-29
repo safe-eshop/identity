@@ -5,4 +5,6 @@ storage: none
 nuget FSharp.Core
 nuget TaskBuilder.fs
 nuget Saturn
+nuget Giraffe
 nuget Expecto
+nuget System.IdentityModel.Tokens.Jwt
