@@ -8,6 +8,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Identity.Domain\Identity.Domain.fsproj" />
+    <ProjectReference Include="..\Identity.Infrastructure\Identity.Infrastructure.fsproj" />
   </ItemGroup>
   <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>
