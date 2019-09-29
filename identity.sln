@@ -9,6 +9,10 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Identity.Api", "src\Identit
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Identity.Domain", "src\Identity.Domain\Identity.Domain.fsproj", "{033A9DE7-8395-4516-AA2B-15F5282CAA05}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{E94D05E7-8D56-4DE3-A807-E4A6F9C90B86}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Identity.DomainTests", "test\Identity.DomainTests\Identity.DomainTests.fsproj", "{67F675BB-6230-4D4B-A125-925759DFE5AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,9 +50,22 @@ Global
 		{033A9DE7-8395-4516-AA2B-15F5282CAA05}.Release|x64.Build.0 = Release|Any CPU
 		{033A9DE7-8395-4516-AA2B-15F5282CAA05}.Release|x86.ActiveCfg = Release|Any CPU
 		{033A9DE7-8395-4516-AA2B-15F5282CAA05}.Release|x86.Build.0 = Release|Any CPU
+		{67F675BB-6230-4D4B-A125-925759DFE5AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67F675BB-6230-4D4B-A125-925759DFE5AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67F675BB-6230-4D4B-A125-925759DFE5AA}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{67F675BB-6230-4D4B-A125-925759DFE5AA}.Debug|x64.Build.0 = Debug|Any CPU
+		{67F675BB-6230-4D4B-A125-925759DFE5AA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{67F675BB-6230-4D4B-A125-925759DFE5AA}.Debug|x86.Build.0 = Debug|Any CPU
+		{67F675BB-6230-4D4B-A125-925759DFE5AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67F675BB-6230-4D4B-A125-925759DFE5AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67F675BB-6230-4D4B-A125-925759DFE5AA}.Release|x64.ActiveCfg = Release|Any CPU
+		{67F675BB-6230-4D4B-A125-925759DFE5AA}.Release|x64.Build.0 = Release|Any CPU
+		{67F675BB-6230-4D4B-A125-925759DFE5AA}.Release|x86.ActiveCfg = Release|Any CPU
+		{67F675BB-6230-4D4B-A125-925759DFE5AA}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{05E7EE61-B1DF-4B3C-8AA0-9902B72E6161} = {6B81B3A0-1200-4F2D-9D8C-048FDF720B61}
 		{033A9DE7-8395-4516-AA2B-15F5282CAA05} = {6B81B3A0-1200-4F2D-9D8C-048FDF720B61}
+		{67F675BB-6230-4D4B-A125-925759DFE5AA} = {E94D05E7-8D56-4DE3-A807-E4A6F9C90B86}
 	EndGlobalSection
 EndGlobal

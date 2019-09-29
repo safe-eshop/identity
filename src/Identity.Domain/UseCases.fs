@@ -9,7 +9,11 @@ module UseCases =
     
     type LoginUser =  {| username: string; password: string |} -> Task<Result<UserToken, DomainError>>
 
-    let login(user: {| username: string; password: string |}) : Task<Result<UserToken, DomainError>> = 
+    type GetUser = {| username: string; password: string |} -> Task<Result<User, DomainError>>
+
+    type GenerateToken = User -> Task<Result<UserToken, DomainError>>
+
+    let login(getUser: GetUser)(generateToken: GenerateToken)(user: {| username: string; password: string |}) : Task<Result<UserToken, DomainError>> = 
         task {
-           return Error(UserNotExists(user.username)) 
+            return! getUser(user) |> TaskRop.bind (generateToken)
         }

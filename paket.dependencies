@@ -5,3 +5,4 @@ storage: none
 nuget FSharp.Core
 nuget TaskBuilder.fs
 nuget Saturn
+nuget Expecto
