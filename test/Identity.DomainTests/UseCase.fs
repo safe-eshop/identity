@@ -19,7 +19,7 @@ module UseCase =
                 }
 
                 testCaseAsync "Login when user is found" <| async {
-                    let user = { id = Guid.NewGuid().ToString(); username = "test" }
+                    let user = { id = Guid.NewGuid().ToString(); username = "test"; roles = [||] }
                     let token = { token = "adasds"; refreshToken = "adsdsadsa"; expiry = 2L }
                     let getUser: GetUser = (fun u -> task { return Ok(user) })
                     let generateToken: GenerateToken = (fun u -> task { return Ok(token) })

@@ -1,7 +1,8 @@
 namespace Identity.Domain
 open System.Threading.Tasks
-open FSharp.Control.Tasks
-module TaskRop =
+open FSharp.Control.Tasks.V2
+
+module TaskResult =
     
     let bind (f : 'a -> Task<Result<'b, 'c>>) (a : Task<Result<'a, 'c>>)  : Task<Result<'b, 'c>> = task {
         match! a with
