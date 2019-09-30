@@ -4,6 +4,7 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="UserController.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
   <ItemGroup>
