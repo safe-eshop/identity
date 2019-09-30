@@ -10,6 +10,13 @@ module Token =
     [<Tests>]
     let tests = 
         testList "Token" [
+            testList "toEpoch" [
+                test "test" {
+                    let date = DateTime(2018, 3, 14, 10, 26, 21);
+                    let epoch = toEpoch(date);
+                    Expect.equal epoch (1521023181L) "epoch should equal 1521023181"
+                }
+            ]
             testList "generate" [
                 testCase "Login when user not found" <| fun _ -> 
                     let userId = Guid.NewGuid().ToString()
