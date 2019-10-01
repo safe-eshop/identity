@@ -11,7 +11,7 @@ module UseCases =
         task {
             let! evt = getUser(user) 
                         |> TaskResult.bind (fun user -> generateToken { username = user.username; userId = user.id; roles = user.roles } |> TaskResult.bind(fun t -> Task.FromResult(Ok({| user = user; token = t |}))))
-                        |> TaskResult.bind(fun res -> publishDomainEvent(UserAuthenticated(res)))
+                        |> TaskResult.bind(fun res -> publishDomainEvent(UserAuthenticated(res.user, res.token)))
            
-            return evt |> Result.map(fun evt -> match evt with | UserAuthenticated u -> u.token)
+            return evt |> Result.map(fun evt -> match evt with | UserAuthenticated(_, token) -> token)
         }

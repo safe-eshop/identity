@@ -5,6 +5,7 @@ open System.IdentityModel.Tokens.Jwt
 open System.Security.Cryptography
 open Microsoft.IdentityModel.Tokens
 open System.Text
+open Identity.Domain.Types
 
 module Token = 
     open Identity.Domain

@@ -12,4 +12,4 @@ type DomainError =
     | UserNotExists of username: string
 
 type DomainEvent = 
-    | UserAuthenticated of {| user: User; token: UserToken |}
+    | UserAuthenticated of user: User * token: UserToken
