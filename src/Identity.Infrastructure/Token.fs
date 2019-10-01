@@ -1,5 +1,4 @@
 namespace Identity.Infrastructure
-open Identity.Domain.UseCases
 open System.Threading.Tasks
 open System.Security.Claims
 open System.IdentityModel.Tokens.Jwt
