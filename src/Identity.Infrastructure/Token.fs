@@ -12,6 +12,7 @@ module Token =
     open Identity.Domain.Model
     open System
 
+    [<CLIMutable>]
     type JwtConfig = { expiryHours: int64; secretKey: string; issuer: string; audience: string }
 
     let private generateRefreshToken(size: int option) =

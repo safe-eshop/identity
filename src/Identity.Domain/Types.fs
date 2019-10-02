@@ -3,9 +3,6 @@ open Identity.Domain.Model
 open System.Threading.Tasks
 
 type GetUserDto = { username: string; password: string }
-type LoginUserDto = { username: string; password: string }
-
-type LoginUser =  LoginUserDto -> Task<Result<UserToken, DomainError>>
 
 type TokenGeneratorParams = { userId: string; username: string; roles: string[] }
 

@@ -11,3 +11,8 @@ type ApplicationError =
 type MapDomainToApplicationError = DomainError -> ApplicationError
 
 type PublishIntegrationEvent = IntegrationEvent -> Task<Result<IntegrationEvent, ApplicationError>>
+
+[<CLIMutable>]
+type LoginUserDto = { username: string; password: string }
+
+type LoginUser =  LoginUserDto -> Task<Result<UserToken, DomainError>>

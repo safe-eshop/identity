@@ -6,9 +6,9 @@ open Identity.Domain.Model
 module ApplicationErrorMapper =
     open Identity.Application.Types
     let map(domainError: DomainError): ApplicationError =
-            match domainError with
-            | UserNotExists(username) | UserPasswordIncorrect(username)->
-                UserNotFound(username)
+      match domainError with
+      | UserNotExists(username) | UserPasswordIncorrect(username)->
+          UserNotFound(username)
 
 module TaskResult =
     
