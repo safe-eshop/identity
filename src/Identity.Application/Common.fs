@@ -1,6 +1,14 @@
 namespace Identity.Application
 open System.Threading.Tasks
 open FSharp.Control.Tasks.V2
+open Identity.Domain.Model
+
+module ApplicationErrorMapper =
+    open Identity.Application.Types
+    let map(domainError: DomainError): ApplicationError =
+            match domainError with
+            | UserNotExists(username) | UserPasswordIncorrect(username)->
+                UserNotFound(username)
 
 module TaskResult =
     
@@ -11,7 +19,7 @@ module TaskResult =
             return! next
         | Error err -> return (Error err)
     }
-
+    
     let mapError (ferr : 'b -> 'c) (a : Task<Result<'a, 'b>>)  : Task<Result<'a, 'c>> = task {
         match! a with
         | Ok value -> return Ok(value)

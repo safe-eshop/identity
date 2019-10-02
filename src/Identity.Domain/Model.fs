@@ -10,3 +10,4 @@ type UserToken = { token: string; refreshToken: string; expiry: int64 }
 
 type DomainError = 
     | UserNotExists of username: string
+    | UserPasswordIncorrect of username: string
