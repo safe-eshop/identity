@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Compile Include="Common.fs" />
+    <Compile Include="Types.fs" />
     <Compile Include="UseCases.fs" />
   </ItemGroup>
 

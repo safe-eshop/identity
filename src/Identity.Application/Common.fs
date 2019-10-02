@@ -12,6 +12,14 @@ module TaskResult =
         | Error err -> return (Error err)
     }
 
+    let mapError (ferr : 'b -> 'c) (a : Task<Result<'a, 'b>>)  : Task<Result<'a, 'c>> = task {
+        match! a with
+        | Ok value -> return Ok(value)
+        | Error err -> 
+          let newErr = ferr(err)
+          return Error(newErr)
+    }
+
     let compose (f : 'a -> Task<Result<'b, 'e>>) (g : 'b -> Task<Result<'c, 'e>>) : 'a -> Task<Result<'c, 'e>> =
         fun x -> bind g (f x)
 

@@ -10,6 +10,3 @@ type UserToken = { token: string; refreshToken: string; expiry: int64 }
 
 type DomainError = 
     | UserNotExists of username: string
-
-type DomainEvent = 
-    | UserAuthenticated of user: User * token: UserToken
