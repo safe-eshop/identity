@@ -4,11 +4,14 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="IoC.fs" />
+    <Compile Include="ApiInfrastructure.fs" />
     <Compile Include="UserController.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Identity.Domain\Identity.Domain.fsproj" />
+    <ProjectReference Include="..\Identity.Application\Identity.Application.fsproj" />
     <ProjectReference Include="..\Identity.Infrastructure\Identity.Infrastructure.fsproj" />
   </ItemGroup>
   <Import Project="..\..\.paket\Paket.Restore.targets" />

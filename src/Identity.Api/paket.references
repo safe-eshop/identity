@@ -1,3 +1,4 @@
+AspNetCore.HealthChecks.UI.Client
 FSharp.Core
 TaskBuilder.fs
-Saturn
+Giraffe

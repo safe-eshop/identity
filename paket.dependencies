@@ -2,9 +2,10 @@ source https://api.nuget.org/v3/index.json
 framework: netcoreapp3.0, netstandard2.1, netstandard2.0
 storage: none
 
+
+nuget AspNetCore.HealthChecks.UI.Client
 nuget FSharp.Core
 nuget TaskBuilder.fs
-nuget Saturn
 nuget Giraffe
 nuget Expecto
 nuget System.IdentityModel.Tokens.Jwt

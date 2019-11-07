@@ -1,4 +1,4 @@
-POST http://localhost:5000/Token HTTP/1.1
+POST http://localhost:5000/api/token HTTP/1.1
 Content-Type: application/json  
 
-{ "username": "test", "password": "test" }
+{ "username": "admin", "password": "admin" }

@@ -6,6 +6,8 @@ open System.Security.Cryptography
 open Microsoft.IdentityModel.Tokens
 open System.Text
 open Identity.Domain.Types
+open Identity.Application.Types
+open System.Diagnostics
 
 module Token = 
     open Identity.Domain

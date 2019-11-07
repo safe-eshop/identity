@@ -1,27 +1,27 @@
 namespace Identity.Api.User
 open FSharp.Control.Tasks.V2.ContextInsensitive
 open Identity.Infrastructure.Token
+open Identity.Domain.Types
+open Identity.Application.UseCases
+open Microsoft.Extensions.Logging
+open Identity.Application.Types
+open Microsoft.Extensions.Options
+open Identity.Infrastructure
+open Identity.Api.Messages
 
 module Controller = 
-    open Saturn.ControllerHelpers
     open Microsoft.AspNetCore.Http
     open Giraffe
-    open Microsoft.AspNetCore.Identity
-    open Identity.Application.Types
-    open Microsoft.Extensions.Options
-    open Newtonsoft.Json
-    open Saturn
-
-    let handleGetToken =
+    
+    let getTokenHandler: HttpHandler =
         fun (next : HttpFunc) (ctx : HttpContext) ->
             task {
-                let! loginDto = Controller.getModel<LoginUserDto> ctx
-                let config = ctx.GetService<IOptions<JwtConfig>>()
-                let! tokenResult = UsersService.loginAsync usersRepository.GetUser (Crypto.jwt(config.Value)) loginDto
-                match tokenResult with
+               
+                let! loginDto = ctx.BindJsonAsync<LoginUserDto>()              
+                let login = ctx.GetService<LoginUser>()
+                match! login(loginDto) with
                 | Ok(token) -> 
-                     return! Successful.OK token next ctx
+                     return! json token next ctx
                 | Error(err) ->
-                    return! RequestErrors.BAD_REQUEST err next ctx
+                    return! identityerror err next ctx
             }
-    

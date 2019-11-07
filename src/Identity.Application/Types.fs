@@ -10,9 +10,8 @@ type ApplicationError =
 
 type MapDomainToApplicationError = DomainError -> ApplicationError
 
+type TokenGeneratorParams = { userId: string; username: string; roles: string[] }
+
+type GenerateToken = TokenGeneratorParams -> Task<Result<UserToken, ApplicationError>>
+
 type PublishIntegrationEvent = IntegrationEvent -> Task<Result<IntegrationEvent, ApplicationError>>
-
-[<CLIMutable>]
-type LoginUserDto = { username: string; password: string }
-
-type LoginUser =  LoginUserDto -> Task<Result<UserToken, DomainError>>
