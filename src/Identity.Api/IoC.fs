@@ -18,7 +18,7 @@ module IoC =
         let config = provider.GetService<IOptions<JwtConfig>>()
         let tokenGenerator cfg : GenerateToken = fun par -> task { return Ok(Token.generateJwt(cfg) par)}
         let myLogger (logger: ILogger<unit>) = fun msg -> logger.LogInformation(msg)
-        UseCases.login Repository.fakeGetUser (tokenGenerator(config.Value)) (Messaging.fakePublisher(myLogger(logger)))(ApplicationErrorMapper.map)
+        UseCases.login Repository.fakeGetUser (tokenGenerator(config.Value)) (Messaging.fakePublisher(myLogger(logger)))
     
     let addInfrastructure (services: IServiceCollection) = 
         services |> addTransient(addLogin)
