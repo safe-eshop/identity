@@ -29,7 +29,7 @@ jobs:
   timeoutInMinutes: 90
   variables:
     isPullRequest: $[ eq(variables['Build.Reason'], 'PullRequest') ]
-    imageName: safe-eshop/indentity
+    imageName: safeshop/indentity
     image: ./src/Identity.Api/Dockerfile
     imageTag: $(Build.SourceBranchName)
   steps:
