@@ -45,11 +45,13 @@ module App =
                 .AddGiraffe()
                 .Configure<JwtConfig>(configuration.GetSection("jwt")) |> ignore
             services |> IoC.addInfrastructure |> ignore
+            services |> HealthCheck.addHealthCheck |> ignore
 
         member __.Configure (app : IApplicationBuilder) =
             if pathBase |> String.IsNullOrEmpty |> not then
                 app.UsePathBase(PathString(pathBase))  |> ignore
                           // Add Giraffe to the ASP.NET Core pipeline
+            app |> HealthCheck.useHealthCheck |> ignore
             app.UseGiraffeErrorHandler(errorHandler)
                .UseStaticFiles()
                .UseResponseCaching()
